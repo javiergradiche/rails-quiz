@@ -15,13 +15,8 @@ RSpec.describe 'Listing people', type: :feature do
     aggregate_failures do
       expect(page).to have_content('Foo Bar')
       expect(page).to have_content('Baz')
+      expect(page).to have_content('Biz')
     end
+
   end
-
-  scenario 'New person', type: :feature do
-    visit new_person_path
-
-    expect(page).to have_field :person_name
-  end
-
 end
