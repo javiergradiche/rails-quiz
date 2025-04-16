@@ -1,6 +1,11 @@
 h2 Creating an entry
 
 = form_for @person, class: 'row' do |f|
+  - if @person.errors.any?
+    .alert.alert-danger.d-block
+      ul
+        - @person.errors.full_messages.each do |message|
+          li=message
   .col-auto
     = f.label :name, class: 'form-label'
     = f.text_field :name, class: 'form-control'

@@ -5,7 +5,7 @@ RSpec.describe 'Listing people', type: :feature do
     Person.create(
       name: 'Foo Bar',
       phone_number: 'Biz',
-      email: 'Baz'
+      email: 'Baz@email.com'
     )
   end
 
@@ -14,7 +14,7 @@ RSpec.describe 'Listing people', type: :feature do
 
     aggregate_failures do
       expect(page).to have_content('Foo Bar')
-      expect(page).to have_content('Baz')
+      expect(page).to have_content('Baz@email.com')
     end
   end
 
