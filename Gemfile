@@ -37,6 +37,7 @@ group :test do
   gem "rspec-its"
   gem "shoulda"
   gem "simplecov", require: false
+  gem 'rails-controller-testing'
 end
 
 # Use Redis for Action Cable

@@ -1,0 +1,21 @@
+h2 Companies
+
+.mb-3
+  = link_to 'New Company', new_company_path, class: 'btn btn-primary'
+
+table.table
+  thead
+    tr
+      th[scope="col"] Name
+      th[scope="col"] Actions
+  tbody
+    - @companies.each do |company|
+      tr
+        td= company.name
+        td
+          .btn-group
+            = link_to 'Edit', edit_company_path(company), class: 'btn btn-sm btn-outline-primary'
+            = link_to 'Delete', company_path(company), 
+              method: :delete, 
+              class: 'btn btn-sm btn-outline-danger', 
+              data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } 

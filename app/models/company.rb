@@ -9,5 +9,7 @@
 #
 
 class Company < ApplicationRecord
-  has_many :people
+  has_many :people, dependent: :nullify
+  
+  validates :name, presence: true
 end
