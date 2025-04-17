@@ -73,19 +73,4 @@ RSpec.describe CompaniesController, type: :controller do
       end
     end
   end
-
-  describe 'DELETE destroy' do
-    let!(:company) { Company.create!(valid_attributes) }
-
-    it 'destroys the requested company' do
-      expect {
-        delete :destroy, params: { id: company.to_param }
-      }.to change(Company, :count).by(-1)
-    end
-
-    it 'redirects to the companies list' do
-      delete :destroy, params: { id: company.to_param }
-      expect(response).to redirect_to(companies_path)
-    end
-  end
 end 

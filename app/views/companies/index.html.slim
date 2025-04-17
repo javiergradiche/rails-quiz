@@ -15,7 +15,3 @@ table.table
         td
           .btn-group
             = link_to 'Edit', edit_company_path(company), class: 'btn btn-sm btn-outline-primary'
-            = link_to 'Delete', company_path(company), 
-              method: :delete, 
-              class: 'btn btn-sm btn-outline-danger', 
-              data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } 
